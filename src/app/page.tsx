@@ -19,12 +19,12 @@ export default function Home() {
       <Image src="/images/seafood-feast.png" alt="A platter of lobster, crab, shrimp and mussels" fill priority sizes="100vw" className="hero-image" />
       <div className="hero-shade" />
       <div className="hero-content">
-        <p className="eyebrow light">Fresh • Fiery • Unforgettable</p>
+        <p className="eyebrow light">Phnom Penh Based • Open 11am—11pm</p>
         <h1>SEAFOOD<br/>DONE <em>LOUD.</em></h1>
-        <p className="hero-copy">Roll up your sleeves. Crack into ocean-fresh seafood tossed in our bold, house-made sauces.</p>
+        <p className="hero-copy">Fresh Cajun seafood boils with bold Louisiana flavor. Dine-in, pick-up and delivery every day.</p>
         <div className="hero-buttons"><ReservationButton label="Reserve your table" /><a className="text-link light-link" href="#menu">Explore the menu <span>↘</span></a></div>
       </div>
-      <p className="hero-side">PHNOM PENH • CAMBODIA</p>
+      <p className="hero-side">#20 STREET 302 • BKK1 • PHNOM PENH</p>
     </section>
 
     <section id="story" className="intro section-pad">
@@ -57,7 +57,7 @@ export default function Home() {
 
     <footer id="contact">
       <div className="footer-top"><div><p className="eyebrow light">Your table is waiting</p><h2>LET’S GET<br/><em>CRACKING.</em></h2></div><ReservationButton label="Book a table" /></div>
-      <div className="footer-grid"><div><p>THE BOILING SEAFOOD</p><span>Bold catch. Big flavor.</span></div><div><p>VISIT</p><span>Phnom Penh, Cambodia<br/>Open daily · 11am—10pm</span></div><div><p>FOLLOW</p><div className="socials"><a href="#" aria-label="Instagram"><FaInstagram/></a><a href="#" aria-label="Facebook"><FaFacebookF/></a><a href="#" aria-label="TikTok"><FaTiktok/></a></div></div></div>
+      <div className="footer-grid"><div><p>THE BOILING SEAFOOD</p><span>TBS 🦞 · Seafood restaurant<br/>Fresh Cajun boils with bold Louisiana flavor.</span></div><div><p>VISIT & CONTACT</p><span>#20 Street 302, BKK1<br/>Phnom Penh, Cambodia 120103<br/><a href="tel:+85561798383">061 798 383</a><br/>Open daily · 11am—11pm</span></div><div><p>SERVICES</p><span>Delivery · Takeaway · Dine in</span><p>FOLLOW</p><div className="socials"><a href="#" aria-label="Instagram"><FaInstagram/></a><a href="#" aria-label="Facebook"><FaFacebookF/></a><a href="#" aria-label="TikTok"><FaTiktok/></a></div></div></div>
       <p className="copyright">© 2026 The Boiling Seafood. All rights reserved.</p>
     </footer>
   </main>;
