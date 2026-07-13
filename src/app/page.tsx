@@ -1,65 +1,64 @@
 import Image from "next/image";
+import { ReservationButton } from "@/components/interactions";
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
+import { SiteHeader } from "@/components/site-header";
+
+const menu = [
+  ["The Boiling Signature", "Lobster, snow crab, shrimp, mussels, corn & potato", "$58"],
+  ["Garlic Butter King Crab", "Wild-caught legs, roasted garlic butter", "$42"],
+  ["Cajun Shrimp Pot", "Head-on shrimp, smoky house Cajun sauce", "$24"],
+  ["Charred Lobster Tail", "Herb butter, grilled lemon, sea salt", "$28"],
+  ["Ocean Mussels", "White wine, garlic, parsley & sourdough", "$18"],
+];
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+  return <main>
+    <SiteHeader />
+
+    <section id="home" className="hero">
+      <Image src="/images/seafood-feast.png" alt="A platter of lobster, crab, shrimp and mussels" fill priority sizes="100vw" className="hero-image" />
+      <div className="hero-shade" />
+      <div className="hero-content">
+        <p className="eyebrow light">Fresh • Fiery • Unforgettable</p>
+        <h1>SEAFOOD<br/>DONE <em>LOUD.</em></h1>
+        <p className="hero-copy">Roll up your sleeves. Crack into ocean-fresh seafood tossed in our bold, house-made sauces.</p>
+        <div className="hero-buttons"><ReservationButton label="Reserve your table" /><a className="text-link light-link" href="#menu">Explore the menu <span>↘</span></a></div>
+      </div>
+      <p className="hero-side">PHNOM PENH • CAMBODIA</p>
+    </section>
+
+    <section id="story" className="intro section-pad">
+      <p className="eyebrow">Our table, your feast</p>
+      <div className="intro-grid">
+        <h2>We don’t just serve seafood. <em>We start a celebration.</em></h2>
+        <div><p>Born from a love of generous tables and big flavor, The Boiling Seafood brings the coast to the city—one steaming, saucy pot at a time.</p><a className="text-link" href="#experience">Discover our story <span>↘</span></a></div>
+      </div>
+    </section>
+
+    <section id="menu" className="menu-section section-pad">
+      <div className="section-heading"><div><p className="eyebrow">Crack. Dip. Repeat.</p><h2>THE MENU</h2></div><p>Choose your catch. Pick your sauce.<br/>Set your spice level. We’ll do the rest.</p></div>
+      <div className="menu-layout">
+        <div className="menu-list">
+          {menu.map(([name, desc, price], i) => <article className="menu-item" key={name}><span className="menu-no">0{i+1}</span><div><h3>{name}</h3><p>{desc}</p></div><strong>{price}</strong></article>)}
+          <a href="#contact" className="outline-button">View full menu</a>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+        <div className="menu-image-wrap"><Image src="/images/seafood-feast.png" alt="Fresh lobster seafood boil" fill sizes="(max-width: 900px) 100vw, 42vw" className="cover"/><span>THE<br/>BOIL</span></div>
+      </div>
+    </section>
+
+    <section id="experience" className="experience">
+      <div className="experience-image"><Image src="/images/restaurant-interior.png" alt="The Boiling Seafood dining room" fill sizes="(max-width: 900px) 100vw, 55vw" className="cover"/></div>
+      <div className="experience-copy"><p className="eyebrow light">Made for gathering</p><h2>COME<br/>HUNGRY.<br/><em>LEAVE HAPPY.</em></h2><p>Good food is better shared. Settle in for generous plates, warm hospitality, and a dining room made for memorable nights.</p><ReservationButton label="Plan your visit" /></div>
+    </section>
+
+    <section className="testimonials section-pad">
+      <p className="eyebrow">From our guests</p><blockquote>“Messy in the best way. The garlic butter sauce is unbelievable—and the lobster was perfectly cooked.”</blockquote><div className="rating"><span>★★★★★</span><p>4.9 average guest rating</p></div>
+    </section>
+
+    <footer id="contact">
+      <div className="footer-top"><div><p className="eyebrow light">Your table is waiting</p><h2>LET’S GET<br/><em>CRACKING.</em></h2></div><ReservationButton label="Book a table" /></div>
+      <div className="footer-grid"><div><p>THE BOILING SEAFOOD</p><span>Bold catch. Big flavor.</span></div><div><p>VISIT</p><span>Phnom Penh, Cambodia<br/>Open daily · 11am—10pm</span></div><div><p>FOLLOW</p><div className="socials"><a href="#" aria-label="Instagram"><FaInstagram/></a><a href="#" aria-label="Facebook"><FaFacebookF/></a><a href="#" aria-label="TikTok"><FaTiktok/></a></div></div></div>
+      <p className="copyright">© 2026 The Boiling Seafood. All rights reserved.</p>
+    </footer>
+  </main>;
 }
