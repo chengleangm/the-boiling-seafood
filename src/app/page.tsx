@@ -1,6 +1,9 @@
 import Image from "next/image";
 import { ReservationButton } from "@/components/interactions";
 import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa6";
+import { FaStar } from "react-icons/fa";
+import { FiArrowDownRight } from "react-icons/fi";
+import { SiLobsters } from "react-icons/si";
 import { SiteHeader } from "@/components/site-header";
 
 const menu = [
@@ -22,7 +25,7 @@ export default function Home() {
         <p className="eyebrow light">Phnom Penh Based • Open 11am—11pm</p>
         <h1>SEAFOOD<br/>DONE <em>LOUD.</em></h1>
         <p className="hero-copy">Fresh Cajun seafood boils with bold Louisiana flavor. Dine-in, pick-up and delivery every day.</p>
-        <div className="hero-buttons"><ReservationButton label="Reserve your table" /><a className="text-link light-link" href="#menu">Explore the menu <span>↘</span></a></div>
+        <div className="hero-buttons"><ReservationButton label="Reserve your table" /><a className="text-link light-link" href="#menu">Explore the menu <FiArrowDownRight aria-hidden="true"/></a></div>
       </div>
       <p className="hero-side">#20 STREET 302 • BKK1 • PHNOM PENH</p>
     </section>
@@ -31,7 +34,7 @@ export default function Home() {
       <p className="eyebrow">Our table, your feast</p>
       <div className="intro-grid">
         <h2>We don’t just serve seafood. <em>We start a celebration.</em></h2>
-        <div><p>Born from a love of generous tables and big flavor, The Boiling Seafood brings the coast to the city—one steaming, saucy pot at a time.</p><a className="text-link" href="#experience">Discover our story <span>↘</span></a></div>
+        <div><p>Born from a love of generous tables and big flavor, The Boiling Seafood brings the coast to the city—one steaming, saucy pot at a time.</p><a className="text-link" href="#experience">Discover our story <FiArrowDownRight aria-hidden="true"/></a></div>
       </div>
     </section>
 
@@ -52,12 +55,12 @@ export default function Home() {
     </section>
 
     <section className="testimonials section-pad">
-      <p className="eyebrow">From our guests</p><blockquote>“Messy in the best way. The garlic butter sauce is unbelievable—and the lobster was perfectly cooked.”</blockquote><div className="rating"><span>★★★★★</span><p>4.9 average guest rating</p></div>
+      <p className="eyebrow">From our guests</p><blockquote>“Messy in the best way. The garlic butter sauce is unbelievable—and the lobster was perfectly cooked.”</blockquote><div className="rating"><span className="star-icons" aria-label="Five star rating">{Array.from({length:5}).map((_,i)=><FaStar key={i}/>)}</span><p>4.9 average guest rating</p></div>
     </section>
 
     <footer id="contact">
       <div className="footer-top"><div><p className="eyebrow light">Your table is waiting</p><h2>LET’S GET<br/><em>CRACKING.</em></h2></div><ReservationButton label="Book a table" /></div>
-      <div className="footer-grid"><div><p>THE BOILING SEAFOOD</p><span>TBS 🦞 · Seafood restaurant<br/>Fresh Cajun boils with bold Louisiana flavor.</span></div><div><p>VISIT & CONTACT</p><span>#20 Street 302, BKK1<br/>Phnom Penh, Cambodia 120103<br/><a href="tel:+85561798383">061 798 383</a><br/>Open daily · 11am—11pm</span></div><div><p>SERVICES</p><span>Delivery · Takeaway · Dine in</span><p>FOLLOW</p><div className="socials"><a href="#" aria-label="Instagram"><FaInstagram/></a><a href="#" aria-label="Facebook"><FaFacebookF/></a><a href="#" aria-label="TikTok"><FaTiktok/></a></div></div></div>
+      <div className="footer-grid"><div><p>THE BOILING SEAFOOD</p><span className="tbs-label">TBS <SiLobsters aria-label="Lobster"/> · Seafood restaurant</span><span><br/>Fresh Cajun boils with bold Louisiana flavor.</span></div><div><p>VISIT & CONTACT</p><span>#20 Street 302, BKK1<br/>Phnom Penh, Cambodia 120103<br/><a href="tel:+85561798383">061 798 383</a><br/>Open daily · 11am—11pm</span></div><div><p>SERVICES</p><span>Delivery · Takeaway · Dine in</span><p>FOLLOW</p><div className="socials"><a href="#" aria-label="Instagram"><FaInstagram/></a><a href="#" aria-label="Facebook"><FaFacebookF/></a><a href="#" aria-label="TikTok"><FaTiktok/></a></div></div></div>
       <p className="copyright">© 2026 The Boiling Seafood. All rights reserved.</p>
     </footer>
   </main>;
