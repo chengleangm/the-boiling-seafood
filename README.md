@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# The Boiling Seafood — Interactive Restaurant Demo
 
-## Getting Started
+A premium, mobile-first sales demo showing how The Boiling Seafood’s connected customer ordering and restaurant operations system can work. It uses local mock data only and does not charge money, send messages, or store production customer data.
 
-First, run the development server:
+## Main features
+
+- Restaurant homepage, digital menu, promotions, gallery, contact and reservations
+- 20+ searchable dishes with sizes, sauces, spice levels, extras and notes
+- Persistent cart, `BOILING10` promotion, delivery, pickup and Table QR checkout
+- Simulated ABA PayWay, KHQR, cash and pay-at-restaurant outcomes
+- Confirmation, simulated Telegram notification and order tracking
+- Table-aware routes such as `/table/8`
+- Admin routes for orders, menu, promotions, tables, payments and reports
+- LocalStorage persistence for customer orders and menu edits
+
+## Technology
+
+- Next.js 16 App Router, React 19 and TypeScript
+- Tailwind CSS 4 plus project CSS
+- React Icons, local mock data and browser LocalStorage
+
+## Local development
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open `http://localhost:3000`. Verification commands:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run lint
+npm run build
+npm start
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Demo admin login
 
-## Learn More
+- Route: `/admin/login`
+- Email: `admin@theboilingseafood.demo`
+- Password: `Demo1234`
 
-To learn more about Next.js, take a look at the following resources:
+Authentication is deliberately browser-only and is not suitable for production.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Public routes
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+`/`, `/menu`, `/promotions`, `/order`, `/cart`, `/checkout`, `/order-confirmation`, `/track-order`, `/reservation`, `/about`, `/gallery`, `/contact`, and `/table/[number]`.
 
-## Deploy on Vercel
+## Admin routes
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+`/admin`, `/admin/orders`, `/admin/menu`, `/admin/categories`, `/admin/promotions`, `/admin/tables`, `/admin/payments`, `/admin/reservations`, `/admin/customers`, `/admin/reports`, `/admin/gallery`, `/admin/content`, and `/admin/settings`.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Demo payments and Table QR
+
+ABA PayWay and KHQR buttons only simulate success or failure. Table routes automatically identify the table number; an order from `/table/8` is saved with channel `Table QR` and customer `Table 8`, then appears in the shared admin order list.
+
+## Build and deployment
+
+Run `npm run build` before deploying to a standard Next.js host. LocalStorage data is device-specific and must be replaced by a database before production.
+
+## Production integrations required
+
+- Secure staff authentication, roles, database and server-side validation
+- ABA PayWay and KHQR merchant integrations
+- Telegram bot, SMS, email and kitchen-display integrations
+- Receipt printers and real delivery dispatch/tracking
+- Final restaurant content, legal policies, analytics and monitoring
